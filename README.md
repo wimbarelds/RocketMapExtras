@@ -22,3 +22,5 @@ See the screenshots below:
 2. Open `gulp-config.json` and correct the URL's there (Depending on your setup, you might not need to change the __GYMDATA_PATH__ value).
 3. Go to the folder in terminal or command prompt and type: `gulp build`
 4. A `dist` folder will be created, copy the contents to your webserver
+5. Run `/RocketMapExtras/GymData/create_tables.php` once, then delete it from your server
+6. Setup a cron or scheduled task that executes `/RocketMapExtras/GymData/task.php` periodically
