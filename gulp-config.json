@@ -1,0 +1,7 @@
+{
+    "replace": [
+        { "searchStr": "__BASE_URL__",      "replaceStr": "http://www.yoursite.com/RocketMapExtras/" },
+        { "searchStr": "__ROCKETMAP_URL__", "replaceStr": "http://www.yoursite.com/RocketMap/" },
+        { "searchStr": "__GYMDATA_PATH__",  "replaceStr": "/RocketMapExtras/GymData" }
+    ]
+}

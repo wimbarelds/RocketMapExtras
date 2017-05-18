@@ -1,0 +1,263 @@
+$mystic: #0677ED;
+$valor: #F00;
+$instinct: #FAD108;
+
+#gym-details {
+    /* Trainer names, Gym names */
+    .trainer-level + div[style],
+    .gym-history-record-text > p > span,
+    .trainer-info-gym-pokemon-record-gym-name,
+    .trainer-info-gym-history-record-text-gymname {
+        &:hover {
+            color: #246;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    .gym-history {
+        /* Title */
+        > h3 {
+            text-align: center;
+        }
+
+        &-record {
+            display: flex;
+            padding: 5px 10px 5px 10px;
+            position: relative;
+
+            &.team-mystic {
+                background-color: rgba($mystic, 0.1);
+            }
+            &.team-valor {
+                background-color: rgba($valor, 0.1);
+            }
+            &.team-instinct {
+                background-color: rgba($instinct, 0.1);
+            }
+            &.pokemon-added::before,
+            &.pokemon-removed::before {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                line-height: 10px;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: Arial;
+                text-align: center;
+                padding: 3px;
+                border-radius: 50%;
+            }
+            &.pokemon-added::before {
+                color: #FFF;
+                background-color: #090;
+                content: '+';
+            }
+            &.pokemon-removed::before {
+                color: #FFF;
+                background-color: #C00;
+                content: '\2212';
+            }
+
+            &-icon {
+                width: 50px;
+                text-align: center;
+            }
+            &-text {
+                flex: 1;
+            }
+            &-text h4, &-when date {
+                font-weight: bold;
+                line-height: 1;
+                margin: 0;
+                font-size: 1em;
+            }
+            &-text p, &-when time {
+                margin: 0;
+                font-size: .75em;
+            }
+            &-when {
+                date, time {
+                    display: block;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    .trainer-info {
+        &-general {
+            text-align: center;
+
+            &-trainerName {
+
+            }
+            &-teamLogo {
+                max-width: 50%;
+            }
+            &-level {
+                font-weight: bold;
+            }
+        }
+        &-gym-pokemon {
+            &-title {
+                text-align: center;
+            }
+            &-record {
+                display: flex;
+                padding: 5px 10px 5px 10px;
+                position: relative;
+
+                &-icon {
+                    width: 50px;
+                    text-align: center;
+                }
+                &-pokemon {
+                    padding-right: 10px;
+                }
+                &-gym {
+                    flex: 1;
+                    text-align: right;
+
+                    &-container {
+                        position: absolute;
+                        width: 100%;
+                    }
+                }
+                &-pokemon, &-gym {
+                    position: relative;
+
+                    h4, p {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    h4 {
+                        font-size: 1em;
+                        line-height: 1;
+                        margin: 0;
+                    }
+                    p {
+                        font-size: .75em;
+                        line-height: 1.65;
+                        margin: 0;
+                    }
+                }
+                &-locate {
+                    padding-left: 10px;
+                    
+                    &-button {
+                        position: relative;
+                        display: block;
+                        width: 40px;
+                        height: 40px;
+                        padding: 0;
+                        border-radius: 100%;
+                        border: solid #600 3px;
+                        background-color: #FDD;
+                        filter: saturate(0%);
+                        transition: filter ease-in-out 0.3s;
+                        outline: none;
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            display: block;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-image: url('data:image/png;base64,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');
+                            background-size: 32px 32px;
+                            width: 32px;
+                            height: 32px;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        &:hover {
+                            filter: none;
+                        }
+                    }
+                }
+            }
+        }        
+        &-gym-history {
+            &-title {
+                text-align: center;
+            }
+            &-record {
+                display: flex;
+                padding: 5px 10px 5px 10px;
+                position: relative;
+
+                &.pokemon-added::before,
+                &.pokemon-removed::before {
+                    position: absolute;
+                    left: 10px;
+                    top: 10px;
+                    line-height: 10px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    font-family: Arial;
+                    text-align: center;
+                    padding: 3px;
+                    border-radius: 50%;
+                }                
+                &.pokemon-added::before {
+                    color: #FFF;
+                    background-color: #090;
+                    content: '+';
+                }
+                &.pokemon-removed::before {
+                    color: #FFF;
+                    background-color: #C00;
+                    content: '\2212';
+                }
+
+                &-icon {
+                    width: 50px;
+                    text-align: center;
+                }
+                &-text {
+                    flex: 1;
+                    position: relative;
+
+                    h4, p {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    h4 {
+                        font-size: 1em;
+                        line-height: 1;
+                        margin: 0;
+                    }
+                    p {
+                        position: absolute;
+                        width: 100%;
+                        font-size: .75em;
+                        line-height: 1.65;
+                        margin: 0;
+                    }
+                }
+                &-when {
+                    date, time {
+                        display: block;
+                        text-align: right;
+                    }
+                    date {
+                        font-weight: bold;
+                        font-size: 1em;
+                        line-height: 1;
+                        margin: 0;
+                    }
+                    time {
+                        font-size: .75em;
+                        line-height: 1.65;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
